@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Rendez-vous Médical</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .confirmation-card {
+            background-color: #ffffff;
+            max-width: 500px;
+            width: 100%;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 6px solid #28a745;
+        }
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #d4edda;
+            color: #28a745;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            margin: 0 auto 20px auto;
+        }
+        h1 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .details-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        .detail-row:last-child {
+            margin-bottom: 0;
+        }
+        .label {
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .value {
+            color: #212529;
+            font-weight: 600;
+            text-align: right;
+        }
+        .badge {
+            background-color: #e2f0d9;
+            color: #385723;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .btn-primary:hover {
+            background-color: #004085;
+        }
+        .btn-secondary {
+            background-color: #e2e6ea;
+            color: #495057;
+        }
+        .btn-secondary:hover {
+            background-color: #dae0e5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="confirmation-card">
+    <!-- Icône de validation -->
+    <div class="success-icon">✓</div>
+    
+    <h1>Rendez-vous Confirmé !</h1>
+    <p class="subtitle">Votre demande a bien été enregistrée par le service de radiologie.</p>
+    
+    <!-- Récapitulatif des détails -->
+    <div class="details-box">
+        <div class="detail-row">
+            <span class="label">Statut :</span>
+            <span class="value"><span class="badge">Validé</span></span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Examen :</span>
+            <span class="value">Radiographie de contrôle</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Date :</span>
+            <span class="value">Jeudi 27 août 2026</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Heure de passage :</span>
+            <span class="value">14:30</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Lieu :</span>
+            <span class="value">Service Imagerie Médicale<br>Bâtiment B - Rez-de-chaussée</span>
+        </div>
+    </div>
+
+    <!-- Message de rappel lié au premier document -->
+    <div class="alert-box">
+        <span>⚠️</span>
+        <div>
+            <strong>Rappel important :</strong> Veuillez vous présenter <strong>15 minutes avant</strong> l'heure du rendez-vous, muni de votre fiche de renseignements complétée.
+        </div>
+    </div>
+
+    <!-- Actions disponibles -->
+    <div class="btn-group">
+        <button class="btn btn-secondary" onclick="window.print()">Imprimer</button>
+        <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+</div>
+
+</body>
+</html>
