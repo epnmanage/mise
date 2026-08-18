@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche de renseignements patient</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #111;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .instruction {
+            font-style: italic;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            width: 240px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="number"] {
+            flex: 1;
+            padding: 8px 10px;
+            border: none;
+            border-bottom: 1px solid #777;
+            outline: none;
+            font-size: 15px;
+            background-color: transparent;
+        }
+        .form-group input:focus {
+            border-bottom: 2px solid #0056b3;
+        }
+        .question-block {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .radio-label {
+            font-size: 15px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        .radio-options {
+            display: flex;
+            gap: 20px;
+        }
+        .radio-options label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .footer-note {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #222;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Fiche de renseignements patient</h1>
+    <div class="subtitle">Centre Hospitalier — Service de radiologie</div>
+    <div class="instruction">A compléter à la main et à apporter le jour du rendez-vous.</div>
+
+    <form>
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom">
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom">
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date de naissance :</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+
+        <div class="form-group">
+            <label for="rn">Numéro de registre national :</label>
+            <input type="number" id="rn" name="rn">
+        </div>
+
+        <div class="form-group">
+            <label for="adresse">Adresse :</label>
+            <input type="text" id="adresse" name="adresse">
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+            <label for="medecin">Médecin traitant :</label>
+            <input type="text" id="medecin" name="medecin">
+        </div>
+
+        <div class="form-group">
+            <label for="motif">Motif de l'examen :</label>
+            <input type="text" id="motif" name="motif">
+        </div>
+
+        <div class="question-block">
+            <div class="radio-group">
+                <span class="radio-label">Prenez-vous un traitement anticoagulant ?</span>
+                <div class="radio-options">
+                    <label><input type="radio" name="anticoagulant" value="oui"> Oui</label>
+                    <label><input type="radio" name="anticoagulant" value="non"> Non</label>
+                </div>
+            </div>
+
+            <div class="radio-group">
+                <span class="radio-label">Etes-vous allergique à l'iode ?</span>
+                <div class="radio-options">
+                    <label><input type="radio" name="allergie_iode" value="oui"> Oui</label>
+                    <label><input type="radio" name="allergie_iode" value="non"> Non</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            Merci de vous présenter 15 minutes avant l'heure du rendez-vous, muni(e) de cette fiche complétée.
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
