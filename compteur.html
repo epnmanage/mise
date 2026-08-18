@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation - Relevé de Compteur</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .compteur-box {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 3px solid #444;
+        }
+        input[type="number"] {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-align: center;
+            width: 220px;
+            background-color: #000;
+            color: #00ff00; /* Style "digital" vert */
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        /* Supprime les flèches du champ nombre */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resultat {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            display: none;
+            font-weight: bold;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Relevé de Compteur</h1>
+    <p>Veuillez encoder l'index de votre compteur :</p>
+    
+    <div class="compteur-box">
+        <!-- Champ limité à 6 chiffres pour l'exemple -->
+        <input type="number" id="indexCompteur" placeholder="000000" oninput="if(this.value.length > 6) this.value = this.value.slice(0,6);">
+    </div>
+
+    <button onclick="validerReleve()">Valider le relevé</button>
+
+    <div id="message" class="resultat success"></div>
+</div>
+
+<script>
+    function validerReleve() {
+        const input = document.getElementById('indexCompteur');
+        const messageDiv = document.getElementById('message');
+        
+        if (input.value === '') {
+            alert('Veuillez entrer des chiffres avant de valider.');
+            return;
+        }
+
+        // Simule la validation et l'affichage
+        messageDiv.innerHTML = `✓ Index enregistré : ${input.value} kWh`;
+        messageDiv.style.display = 'block';
+        
+        // Optionnel : réinitialise le champ après 3 secondes
+        setTimeout(() => {
+            input.value = '';
+            messageDiv.style.display = 'none';
+        }, 4000);
+    }
+</script>
+
+</body>
+</html>
