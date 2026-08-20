@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 3 - Jeu de Piste EPN</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; color: #333; text-align: center; padding: 20px; margin: 0; }
+        .card { background: white; max-width: 500px; margin: 40px auto; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 8px solid #9b59b6; }
+        h1 { color: #9b59b6; font-size: 2rem; margin-bottom: 20px; }
+        p.enigme { font-size: 1.4rem; line-height: 1.6; font-style: italic; background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid #9b59b6; }
+        input[type="text"] { width: 80%; padding: 12px; font-size: 1.3rem; border: 2px solid #ccc; border-radius: 8px; margin-top: 15px; text-align: center; }
+        button { background-color: #9b59b6; color: white; border: none; padding: 14px 25px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 15px; width: 85%; }
+        .indice { display: none; margin-top: 25px; padding: 20px; background-color: #f5eef8; border-radius: 10px; border: 2px dashed #9b59b6; }
+        .lettre { font-size: 3.5rem; font-weight: bold; color: #8e44ad; display: block; margin-top: 10px; }
+        .erreur { color: #e74c3c; font-weight: bold; margin-top: 10px; display: none; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔍 Énigme n°3</h1>
+        <p><strong>La clé du monde digital 🌐</strong></p>
+        <p class="enigme">"Je suis un réseau invisible mais indispensable. Sans moi, pas de Google, pas de mails, et pas de vidéos de vos petits-enfants ! On m'appelle l'autoroute de l'information. Qui suis-je ?"</p>
+        
+        <input type="text" id="reponseInput" placeholder="Votre réponse ici...">
+        <p id="errorMsg" class="erreur">❌ Ce n'est pas tout à fait ça, réessayez !</p>
+        <button onclick="verifierReponse()">Valider ma réponse</button>
+        
+        <div id="solution" class="indice">
+            <p>🎉 <strong>C'est tout à fait ça !</strong></p>
+            <p>Voici votre troisième lettre à noter sur votre carnet :</p>
+            <span class="lettre">F</span>
+            <p style="font-size: 1rem; color: #666;">Courage, plus qu'un seul QR code à débusquer !</p>
+        </div>
+    </div>
+
+    <script>
+        function verifierReponse() {
+            var rep = document.getElementById('reponseInput').value.toLowerCase().trim();
+            if (rep.includes('internet') || rep.includes('wifi') || rep.includes('wi-fi')) {
+                document.getElementById('solution').style.display = 'block';
+                document.getElementById('errorMsg').style.display = 'none';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

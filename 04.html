@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 4 - Jeu de Piste EPN</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; color: #333; text-align: center; padding: 20px; margin: 0; }
+        .card { background: white; max-width: 500px; margin: 40px auto; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 8px solid #e67e22; }
+        h1 { color: #e67e22; font-size: 2rem; margin-bottom: 20px; }
+        p.enigme { font-size: 1.4rem; line-height: 1.6; font-style: italic; background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid #e67e22; text-align: left; }
+        input[type="text"] { width: 80%; padding: 12px; font-size: 1.3rem; border: 2px solid #ccc; border-radius: 8px; margin-top: 15px; text-align: center; }
+        button { background-color: #e67e22; color: white; border: none; padding: 14px 25px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 15px; width: 85%; }
+        .indice { display: none; margin-top: 25px; padding: 20px; background-color: #fdf2e9; border-radius: 10px; border: 2px dashed #e67e22; text-align: center; }
+        .lettre { font-size: 3.5rem; font-weight: bold; color: #d35400; display: block; margin-top: 10px; }
+        .erreur { color: #e74c3c; font-weight: bold; margin-top: 10px; display: none; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔍 Énigme n°4</h1>
+        <p><strong>Le grand final 🏆</strong></p>
+        <p class="enigme">
+            Bravo, vous y êtes presque ! Résolvez cette charade :<br><br>
+            • Mon premier est la deuxième lettre de l'alphabet (B).<br>
+            • Mon deuxième est la première lettre de l'alphabet (A).<br>
+            • Mon tout se dit haut et fort quand on a réussi quelque chose avec brio !
+        </p>
+        
+        <input type="text" id="reponseInput" placeholder="Votre réponse ici...">
+        <p id="errorMsg" class="erreur">❌ Ce n'est pas le mot de la charade, cherchez encore !</p>
+        <button onclick="verifierReponse()">Valider ma réponse</button>
+        
+        <div id="solution" class="indice">
+            <p>🎉 <strong>Gagné ! Quel brio !</strong></p>
+            <p>Voici la toute dernière lettre à noter :</p>
+            <span class="lettre">É</span>
+            <p style="font-size: 1.2rem; font-weight: bold; color: #333; margin-top: 15px;">Remettez vos 4 lettres dans l'ordre pour découvrir la surprise finale ! ☕</p>
+        </div>
+    </div>
+
+    <script>
+        function verifierReponse() {
+            var rep = document.getElementById('reponseInput').value.toLowerCase().trim();
+            if (rep.includes('bravo')) {
+                document.getElementById('solution').style.display = 'block';
+                document.getElementById('errorMsg').style.display = 'none';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
